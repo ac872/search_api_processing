@@ -1,4 +1,4 @@
-# Search Data Collection
+# Search API Processing
 
 Access data from search API's such as Google Custom Search and Bing
 Search API from REST response to a .csv file or DataFrame.
