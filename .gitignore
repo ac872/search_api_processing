@@ -3,6 +3,12 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# API Files
+*.txt
+
+#CSV Files
+*.csv
+
 # C extensions
 *.so
 

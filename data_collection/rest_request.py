@@ -1,3 +1,4 @@
+"""
 MIT License
 
 Copyright (c) 2021 Arbri Chili
@@ -19,3 +20,26 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+"""
+
+from urllib import request
+import json
+import requests
+
+
+def get_data_from_google(url):
+    with request.urlopen(url) as link:
+        data = json.loads(link.read().decode())
+    # data = requests.get(url).json()
+    return data
+
+
+def get_data_from_bing(url, key):
+    r = requests.get(url, headers={'Ocp-Apim-Subscription-Key': key})
+    data = r.json()
+    return data
+
+
+def read_txt(filename):
+    with open(filename, "r") as file:
+        return file.readline()
